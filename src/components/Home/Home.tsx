@@ -1,0 +1,35 @@
+import { useState } from "react";
+interface Props {
+  items: string[];
+  onSelectItem: (item: string) => void;
+}
+
+function Home({ items, onSelectItem }: Props) {
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  return (
+    <>
+      <ul className="list-group">
+        {items.map((item, index) => {
+          return (
+            <li
+              className={`${
+                selectedIndex === index
+                  ? "list-group-item active"
+                  : "list-group-item"
+              }`}
+              key={item}
+              onClick={() => {
+                setSelectedIndex(index);
+                onSelectItem(item);
+              }}
+            >
+              {item}
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
+}
+
+export default Home;
