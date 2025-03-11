@@ -1,15 +1,16 @@
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import "./App.css";
 
 function App() {
-  const items = ["home", "about", "services", "blog", "more"];
-  const handler = (item: string) => {
-    console.log(item);
-  };
+  const items = ["Home", "About", "Services", "Blog", "More", "Contact"];
+  // const handler = (item: string) => {
+  //   console.log(item);
+  // };
   return (
     <div>
-      <Header />
-      <Home items={items} onSelectItem={handler} />
+      <Header items={items} />
+      <Home />
     </div>
   );
 }
