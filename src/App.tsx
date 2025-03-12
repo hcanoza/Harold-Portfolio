@@ -4,13 +4,11 @@ import "./App.css";
 
 function App() {
   const items = ["Home", "About", "Services", "Blog", "More", "Contact"];
-  // const handler = (item: string) => {
-  //   console.log(item);
-  // };
+  const social = ["Linkedin", "GitHub", "Instagram", "Facebook"];
   return (
     <div>
       <Header items={items} />
-      <Home />
+      <Home social={social} />
     </div>
   );
 }
